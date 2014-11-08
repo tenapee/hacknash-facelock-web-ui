@@ -12,7 +12,7 @@
       uploadbutton = document.querySelector('#uploadbutton'),
       urlfield     = document.querySelector('#uploaded input'),
       urllink      = document.querySelector('#uploaded a');
-      
+
  var ctx    = canvas.getContext('2d'),
      streaming    = false,
      width  = 600,
@@ -104,40 +104,29 @@
         xhr = new XMLHttpRequest();
 
     setstate('uploading');
-    data = canvas.toDataURL('image/jpeg', 0.9).replace(head, '');
 
-    if (location.hostname.indexOf('localhost')!== -1) {
-      fd.append('contents', data);
-      xhr.open('POST', 'copy.php');
-      xhr.addEventListener('error', function(ev) {
-        console.log('Upload Error!');
-      }, false);
-      xhr.addEventListener('load', function(ev) {
-        setstate('uploaded');
-      }, false);
-      xhr.send(fd);
-    } else {
-      fd.append('image', data);
-      fd.append('key', API_KEY);
-      xhr.open('POST', 'http://api.imgur.com/2/upload.json');
-      xhr.addEventListener('error', function(ev) {
-        console.log('Upload Error!');
-      }, false);
-      xhr.addEventListener('load', function(ev) {
-        try {
-          var links = JSON.parse(xhr.responseText).upload.links;
-          store(links.imgur_page.replace(/.*\/+/,''));
-          urlfield.value = links.imgur_page;
-          urllink.href = links.imgur_page;
-          setstate('uploaded');
-        } catch(e) {
-          console.log('Upload Error!' + e);
-        }
-      }, false);
-      xhr.send(fd);
-    }
+    $.ajax('http://localhost:5000/api/similarity', {
+      type: 'POST',
+      data: canvas.toDataURL('image/jpeg', 0.9).replace(/^data:image\/(png|jpeg);base64,/, ""),
+      headers: {'Content-Type' : 'application/octet-stream'},
+      success: function (matches)
+      {
+        // alert(matches["images"][0])
+        var image = document.createElement("img");
+        image.src = matches["images"][0];
+
+        ctx.drawImage(image, 590 - imgwidth, 440 - imgheight, imgwidth, imgheight);
+
+        canvas.style.display='none';
+        vidcontainer.style.display='none'
+
+        var src = document.getElementById("header");
+        src.appendChild(image);
+      }
+    });
+
   }
-  
+
  function setstate(newstate) {
     state = newstate;
     document.body.className = newstate;
