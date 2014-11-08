@@ -5,23 +5,43 @@
 
 html, body {
   background: linear-gradient(to bottom, #00BCD0 0%, #00BCD0 35%, #00BCD0 35%, #ECECEC 35%, #ECECEC 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+  height: 100%;
+  width: 100%;
 }
 
-footer {
-  display: block;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
+#whole {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
-footer p {
-  font-size: 12px;
-  color: #999;
+
+header {
+  position: relative;
+  max-width: 50%;
+  margin: 50px 20%;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: black;
+  font-size: 18px;
+  font-family: "Open Sans", helvetica, sans-serif;
+  font-weight: 200;
+  line-height: 30px;
+    -webkit-transition: 1s 0.5s;
+     -moz-transition: 1s 0.5s;
+      -ms-transition: 1s 0.5s;
+       -o-transition: 1s 0.5s;
+          transition: 1s 0.5s;
 }
-footer p a {
-  color: #ccc;
+
+.intro header {
+  top: 25%;
 }
+
 video {
   display: block;
   -webkit-transform: rotateY(180deg);
@@ -30,6 +50,7 @@ video {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
+
 #videocontainer, canvas {
   position: absolute;
   width: 600px;
@@ -51,6 +72,7 @@ video {
 #videocontainer.playing img {
   display: block;
 }
+
 #controls, #uploaded, #uploading {
   position: absolute;
   width: 600px;
@@ -68,39 +90,7 @@ video {
        -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-header {
-  position: absolute;
-  width: 600px;
-  top: -50%;
-  left: 50%;
-  background: #333;
-  padding: 10px 20px;
-  border-radius: 10px;
-  -webkit-transition: 1s 0.5s;
-     -moz-transition: 1s 0.5s;
-      -ms-transition: 1s 0.5s;
-       -o-transition: 1s 0.5s;
-          transition: 1s 0.5s;
-  -webkit-transform: translate(-50%, -50%);
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-       -o-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-header h1 {
-  color: #eee;
-  font-size: 32px;
-  padding-bottom: 10px;
-}
-header p {
-  font-size: 20px;
-  color: #ccc;
-  line-height: 1.3em;
-  padding-bottom: 10px;
-}
-.intro header {
-  top: 25%;
-}
+
 #controls {
   z-index: 20;
 }
@@ -113,6 +103,7 @@ header p {
   border-radius: 10px;
   padding: 10px 20px;
 }
+
 #uploaded form, #uploaded button {
   width: auto;
 }

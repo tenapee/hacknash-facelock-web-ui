@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>Interaction Cam</title>
-<link rel="stylesheet" href="interactioncam.css">
+<link rel="stylesheet" href="webcam.css">
+  <script src="bower_components/platform/platform.js"></script>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 </head>
 <body>
   <header>
     <h1>Celebrity Match</h1>
     <p>Take your photo to find your celebrity doppelganger</p>
     <p>Then click the appropriate buttons to re-take the photo or get your match. You can also use the left arrow to re-shoot or right arrow to submit.</p>
-    <p>Press SPACE to start your webcam!</p>
+    <p>Press SPACE to start your webcam!<br><br><br></p>
   </header>
   <div id="videocontainer">
   <video id="video"></video>
@@ -30,7 +32,6 @@
     <button id="startbutton">&lt; Take another</button>
   </div>
   <footer>
-<p>Hack Nashville</p>
   </footer>
   <audio src="snap.wav"></audio>
   <!-- http://www.freesound.org/people/thecheeseman/sounds/51360/ -->
