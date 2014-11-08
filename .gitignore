@@ -1,7 +1,31 @@
-dist
-node_modules
-test/temp
-.sass-cache
-app/bower_components
-.tmp
-test/bower_components/
+# use glob syntax.
+syntax: glob
+
+# eclipse
+.classpath
+.project
+.settings
+
+# common junk
+*.log
+*.swp
+*.diff
+*.patch
+
+# intellij
+*.iml
+*.ipr
+*.iws
+.idea/
+atlassian-ide-plugin.xml
+
+# Mac filesystem dust
+.DS_Store
+
+# pmd
+.pmdruleset
+.pmd
+
+# vim
+.*.sw[a-p]
+
