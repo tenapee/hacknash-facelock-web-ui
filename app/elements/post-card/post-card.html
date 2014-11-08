@@ -6,31 +6,46 @@
     <style>
     :host {
       display: block;
-      position: relative;
       background-color: white;
-      padding: 20px;
+      padding: 10px 20px;
       width: 100%;
       font-size: 1.2rem;
       font-weight: 300;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      position: relative;
     }
     .card-header {
       margin-bottom: 10px;
     }
+
+    polyfill-next-selector {content: '.card-header img';}
+    .card-header ::content img {
+      width: 80%;
+      margin: 5% 10%;
+      height: 200px;
+
+    }
       
-    polyfill-next-selector {content: '.card-header h2';}
-    .card-header ::content h2 {
-      margin: 0;
-      font-size: 1.8rem;
+    polyfill-next-selector {content: 'p';}
+    .card-header ::content p {
+      clear: both;
+      text-align: center;
+      font-size: 1.5rem;
       font-weight: 300;
     }
     
     </style>
 
     <!-- CARD CONTENTS GO HERE -->
+    <div id="card">
     <div class="card-header" layout horizontal center>
-      <content select="h2"></content>
-    </div>
+      <content select="img"></content>
+        </div>
+            <content select="p"></content>
     <content></content>
+      </div>
   </template>
   <script>
   Polymer({});

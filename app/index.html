@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild-->
 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
   <script src="bower_components/platform/platform.js"></script>
   <!-- build:vulcanized elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
@@ -25,50 +27,98 @@
     background-color: #E5E5E5;
     font-family: 'RobotoDraft', sans-serif;
   }
-    
+
   core-header-panel {
     height: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
-    
+
   core-toolbar {
     background: #03a9f4;
     color: white;
   }
-    
-  #tabs {
-    width: 100%;
-    margin: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-transform: uppercase;
-  }
-    
     .button {
       background: white;
       color: blue;
+     text-align: center;
     }
-    
+
   .container {
-    width: 80%;
-    margin: 50px auto;
+    max-width: 80%;
+    margin: 50px 20%;
   }
-  @media (min-width: 481px) {
-    #tabs {
-      width: 200px;
+    #intro {
+      margin: 10px 10%;
+      font-size: 1.3em;
+      font-weight: 400;
+      text-align: center;
     }
-    .container {
-      width: 400px;
+
+    p {
+      margin: 10px 10%;
+      font-size: 1.1em;
+    }
+    img {
+      margin: 0 20%;
+    }
+
+    #left {
+      margin-left: 20%;
+      float: left;
+    }
+
+    #right {
+      margin-right: 20%;
+      float: right;
+    }
+
+
+
+  @media (max-width: 700px) {
+    #left {
+      float: left;
+      margin-left:20%;
+    }
+
+    #right {
+      float: right;
+      margin-right: 20%;
     }
   }
+  @media (max-width: 600px) {
+
+    img {
+      height: 120px;
+    }
+
+    #left {
+      width: 60%;
+      clear: both;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+
+    #right {
+      width: 60%;
+      clear: both;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+    }
+  }
+
+
   </style>
 </head>
 
 <body unresolved>
 <core-header-panel>
+
   <!--  <core-toolbar>
       <paper-tabs id="tabs" selected="all" self-end>
         <paper-tab name="all">All</paper-tab>
@@ -77,19 +127,21 @@
     </core-toolbar> -->
   <!-- main page content goes here -->
    <div class="container" layout vertical center>
+
       <post-card>
-      <h2>Choose an Option:</h2>
-      <paper-button raised class="button">
-        Upload a file
+        <img src="celebrime_logo.png">
+        <br>
+      <p id="intro">CelebriME is a photo recognition software that takes your portrait and uses multiple machine learning algorithms to match you with the five celebrities that look most like you.</p>
+
+      <paper-button raised class="button" id="left"><a href="upload.html"> Upload a file </a>
         </paper-button>
-              <paper-button raised class="button">
-        Use Webcam
+              <paper-button raised class="button" id="right"><a href="webcam.html">   Use Webcam </a>
         </paper-button>
-      
-      </post-card> 
-    </div> 
+      <br><br><br><br><br>
+      </post-card>
+    </div>
   </core-header-panel>
-  
+
 
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
