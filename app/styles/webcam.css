@@ -12,7 +12,6 @@ html, body {
   width: 100%;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.87);
   margin: 0;
@@ -149,6 +148,17 @@ video {
   border-radius: 10px;
   padding: 10px 20px;
   margin: auto 2px;
+}
+
+paper-dialog {
+  font-family: "Open Sans", helvetica, sans-serif;
+  border-radius: 10px;
+  color: #004C7C;
+  text-align: center;
+}
+
+paper-dialog h1 {
+  padding: 10px;
 }
 
 #uploaded form, #uploaded button {
