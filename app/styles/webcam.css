@@ -143,7 +143,7 @@ iframe {
   font-weight: 300;
   padding: 10px;
 }
-    
+
 #snap {
   margin-top: 20px;
 
@@ -265,4 +265,7 @@ paper-dialog h1 {
 .uploading #canvas {display: none;}
 .uploading #videocontainer {display: none;}
 .uploading #animation { display: block;}
+.finished #animation {display: none;}
+.finished #videocontainer {display:none;}
+.finished #canvas {display:none;}
 
