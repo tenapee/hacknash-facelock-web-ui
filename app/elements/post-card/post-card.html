@@ -35,7 +35,12 @@
       font-size: 1.3em;
       font-weight: 400;
     }
-      
+          polyfill-next-selector {content: 'h1';}
+    .card-header ::content h1 {
+      clear: both;
+      text-align: center;
+      font-weight: 400;
+    }
 
     
     </style>
@@ -44,7 +49,7 @@
     <div id="card">
     <div class="card-header" layout horizontal center>
       <content select="img"></content>
-      <content select="h2"></content>
+      <content select="h1"></content>
         </div>
             <content select="p"></content>
     <content></content>
