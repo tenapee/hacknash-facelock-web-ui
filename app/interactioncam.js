@@ -11,7 +11,9 @@
       startbutton  = document.querySelector('#startbutton'),
       uploadbutton = document.querySelector('#uploadbutton'),
       urlfield     = document.querySelector('#uploaded input'),
-      urllink      = document.querySelector('#uploaded a');
+      urllink      = document.querySelector('#uploaded a'),
+      snap         = document.querySelector('#snap'),
+      capture      = document.querySelector('#capture');
 
  var ctx    = canvas.getContext('2d'),
      streaming    = false,
@@ -175,6 +177,16 @@
   video.addEventListener('click', function(ev){
     setstate('reviewing');
     takepicture();
+  }, false);
+  
+  capture.addEventListener('click', function(ev){
+      setstate('playing');
+      init();
+  }, false);
+  
+  snap.addEventListener('click', function(ev){
+      setstate('reviewing');
+      takepicture();
   }, false);
 
   resetbutton.addEventListener('click', function(ev){

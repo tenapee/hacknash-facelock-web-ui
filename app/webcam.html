@@ -20,12 +20,15 @@ function goBack() {
   <header id="header">
     <h1>Find Your Match!</h1><br>
     <p>Take your photo to find your celebrity doppelganger</p>
-    <p>Then click the appropriate buttons to re-take the photo or get your match. You can also use the left arrow to re-shoot or right arrow to submit.</p><br>
-    <p>Press SPACE to start your webcam!<br><br><br></p>
+    <p>Then click the appropriate buttons to re-take the photo or get your match. You can also use the left arrow to re-shoot or right arrow to submit.</p><br><br><br>
+   <paper-button class="button" id="capture">Start Camera
+        </paper-button><br><br><br>
   </header>
 
   <div id="videocontainer">
   <video id="video"></video>
+        <paper-button class="button" id="snap">Take Photo
+        </paper-button>
   </div>
   <canvas id="canvas"></canvas>
   <div id="controls">
@@ -40,6 +43,7 @@ function goBack() {
       <a href="#">link</a>
     </form>
     <button id="startbutton">&lt; Take another</button>
+
   </div>
   <footer>
   </footer>
