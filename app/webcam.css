@@ -126,8 +126,8 @@ video {
     text-align: center;
     border-radius: 5px;
     padding: 10px;
-    position: absolute;
-    left: 32%;
+    width: 40%;
+    margin: auto 30%;
     }
 #capture {
   font-weight: 300;
@@ -136,8 +136,7 @@ video {
     
 #snap {
   margin-top: 20px;
-  position: absolute;
-  left: 35%;
+
 }
 #controls button, #uploaded form, #uploaded button, #uploading  {
   border: none;
