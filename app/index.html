@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Face|Space</title>
+  <title>CelebriME</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -12,6 +12,8 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild-->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <script src="bower_components/platform/platform.js"></script>
   <!-- build:vulcanized elements/elements.vulcanized.html -->
@@ -23,36 +25,28 @@
     height: 100%;
     margin: 0;
     background-color: #E5E5E5;
-    font-family: 'RobotoDraft', sans-serif;
   }
-    
   core-header-panel {
     height: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
-    
   core-toolbar {
     background: #03a9f4;
     color: white;
   }
-    
-   .button {
+    .button {
       background: #00BCD0;
-      color: blue;
+      color: #FFF;
      text-align: center;
-     color: blue;
- 
-    }
-    a {
-      text-decoration: none;
-      color: #fff;  
-    }
-    a:visited {
-      text-decoration: none;
-      color: #fff;
+      border-radius: 5px;
     }
     
+  a, a:visited {
+      text-decoration: none;
+      color: #FFF;
+    }  
+
   .container {
     max-width: 80%;
     margin: 50px 20%;
@@ -63,7 +57,6 @@
       font-weight: 400;
       text-align: center;
     }
-    
     p {
       margin: 10px 10%;
       font-size: 1.1em;
@@ -71,36 +64,19 @@
     img {
       margin: 0 20%;
     }
-        
     #left {
-      margin-left: 20%;
+      margin-left: 10%;
       float: left;
     }
-    
     #right {
-      margin-right: 20%;
+      margin-right: 10%;
       float: right;
     }
-    
 
-    
-  @media (max-width: 700px) {
-    #left {
-      float: left;
-      margin-left:20%;
-    }
-    
-    #right {
-      float: right;
-      margin-right: 20%;
-    }
-  }
-  @media (max-width: 600px) {
-    
+  @media (max-width: 740px) {
     img {
       height: 120px;
     }
-     
     #left {
       width: 60%;
       clear: both;
@@ -109,7 +85,6 @@
       margin-left: 20%;
       margin-right: 20%;
     }
-    
     #right {
       width: 60%;
       clear: both;
@@ -120,14 +95,13 @@
     }
     }
   }
- 
-
   </style>
 </head>
 
 <body unresolved>
+
 <core-header-panel>
-  
+
   <!--  <core-toolbar>
       <paper-tabs id="tabs" selected="all" self-end>
         <paper-tab name="all">All</paper-tab>
@@ -135,26 +109,28 @@
       </paper-tabs>
     </core-toolbar> -->
   <!-- main page content goes here -->
-   <div class="container" layout vertical center>
-     
+   <div class="container" layout horizontal center>
+
       <post-card>
         <img src="celebrime_logo.png">
         <br>
       <p id="intro">CelebriME is a photo recognition software that takes your portrait and uses multiple machine learning algorithms to match you with the five celebrities that look most like you.</p>
-        
+
       <paper-button class="button" id="left"><a href="upload.html"> Upload a file </a>
         </paper-button>
               <paper-button class="button" id="right"><a href="webcam.html">   Use Webcam </a>
         </paper-button>
       <br><br><br><br><br>
-      </post-card> 
-    </div> 
+
+      </post-card>
+    </div>
   </core-header-panel>
-  
+
 
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
+
 </body>
 
 </html>

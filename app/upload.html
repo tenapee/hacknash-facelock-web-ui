@@ -3,12 +3,69 @@
 <head>
   <meta charset="utf-8">
   <title>Interaction Cam</title>
-
+  <link rel="import" href="elements/elements.html">
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      font-family: "Open Sans", helvetica, sans-serif;
+    }
+    
+   .container {
+    max-width: 80%;
+    position: absolute;
+    top: 15%;
+    margin: 0 20%;
+    height: 60%;
+  }
+    
+    h2 {
+      color: #004C7C;
+      text-align: center;
+      font-weight: 400;
+    }
+    
+    p {
+      font-size: 1.3em;
+      font-weight: 400;
+      line-height: 30px;
+    }
+    
+    #backButton {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  color: #004C7C;
+  background: white;
+  height: 25px;
+  width: 50px;
+  border-radius: 3px;
+  border: none;
+  padding-top: 5px;
+}
+  </style>
 </head>
-<body>
-<form method="post" action="file-upload-1.htm" name="submit" enctype="multipart/form-data">
-  <input type="file" name="fileField"><br /><br />
+<body>      <paper-button onclick="goBack()" id="backButton">Back</paper-button>
+  <div horizontal vertical center layout>
+  <div class="container" layout horizontal center>
+
+
+<script>
+function goBack() {
+    window.history.back()
+}
+</script>
+  <post-card>
+    <h2>Pick Your Picture!</h2>
+    <p>Select a picture to use. Use a good picture. One where you are looking straight ahead. This does not work on dogs.</p><br><br><br>
+<form method="post" action="file-upload-1.htm" name="submit" enctype="multipart/form-data" >
+  <input type="file" name="fileField" ><br /><br />
   <input type="submit" name="submit" value="Submit">
-</form>
+</form><br><br>
+</post-card>
+  </div>
   </body>
 </html>
