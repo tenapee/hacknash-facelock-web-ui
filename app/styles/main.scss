@@ -30,3 +30,98 @@ html, body {
   padding: 0.2em 0;
 }
 
+html,body {
+  height: 100%;
+  margin: 0;
+  background-color: #E5E5E5;
+  font-family: 'RobotoDraft', sans-serif;
+}
+
+core-header-panel {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+core-toolbar {
+  background: #03a9f4;
+  color: white;
+}
+.button {
+  background: #00bcd0;
+  color: blue;
+  text-align: center;
+  border-radius:3px;
+}
+
+a,a:visited{
+  text-decoration:none;
+  color:#fff;
+}
+
+.container {
+  max-width: 80%;
+  margin: 50px 20%;
+}
+#intro {
+  margin: 10px 10%;
+  font-size: 1.3em;
+  font-weight: 400;
+  text-align: center;
+}
+
+p {
+  margin: 10px 10%;
+  font-size: 1.1em;
+}
+img {
+  margin: 0 20%;
+}
+
+#left {
+  margin-left: 20%;
+  float: left;
+}
+
+#right {
+  margin-right: 20%;
+  float: right;
+}
+
+
+
+@media (max-width: 700px) {
+  #left {
+    float: left;
+    margin-left:20%;
+  }
+
+  #right {
+    float: right;
+    margin-right: 20%;
+  }
+}
+@media (max-width: 600px) {
+
+  img {
+    height: 120px;
+  }
+
+  #left {
+    width: 60%;
+    clear: both;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  #right {
+    width: 60%;
+    clear: both;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
