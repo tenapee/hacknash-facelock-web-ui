@@ -166,26 +166,7 @@
     }
   }, false);
 
-  document.addEventListener('keydown', function(ev) {
-    if (ev.which === 32 || ev.which === 37 || ev.which === 39) {
-      ev.preventDefault();
-    }
-    if (ev.which === 32) {
-      if (state === 'intro') {
-        setstate('playing');
-        init();
-      } else {
-        setstate('reviewing');
-        takepicture();
-      }
-    }
-    if (ev.which === 37) {
-      reshoot();
-    }
-    if (ev.which === 39) {
-      initiateupload();
-    }
-  },false);
+
 
   video.addEventListener('click', function(ev){
     setstate('reviewing');

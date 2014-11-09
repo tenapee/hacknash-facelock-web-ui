@@ -45,7 +45,7 @@ header {
   font-weight: 400;
   line-height: 30px;
   height: 60%;
-  overflow-y: auto;
+  overflow: hidden;
 
     -webkit-transition: 1s 0.5s;
      -moz-transition: 1s 0.5s;
@@ -57,6 +57,7 @@ header {
 h1 {
   color: #004C7C;
   text-align: center;
+  font-size: 2em;
 }
 
 p {
@@ -155,6 +156,7 @@ paper-dialog {
   border-radius: 10px;
   color: #004C7C;
   text-align: center;
+  font-size: 1.3em;
 }
 
 paper-dialog h1 {

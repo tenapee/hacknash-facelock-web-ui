@@ -12,28 +12,42 @@
       background-size: 100% 100%;
       background-repeat: no-repeat;
       font-family: "Open Sans", helvetica, sans-serif;
+      text-align: center;
+
     }
     
    .container {
     max-width: 80%;
     position: absolute;
-    top: 15%;
+    top: 8%;
     margin: 0 20%;
     height: 60%;
+
   }
     
     h1 {
       color: #004C7C;
-      text-align: center;
-      font-weight: 400;
+      width: 70%;
+      margin: auto 15%;
+      font-weight: 700;
+      font-size: 2.5em;
+      padding: 10px;
     }
     
     p {
+      width: 80%;
+      margin: auto 10%;
       font-size: 1.3em;
       font-weight: 400;
       line-height: 30px;
     }
     
+    #chooser {
+      float: left;
+    }
+    #submit {
+      float: left;
+    }
     #backButton {
   position: absolute;
   left: 20px;
@@ -46,6 +60,8 @@
   border: none;
   padding-top: 5px;
 }
+    
+
   </style>
 </head>
 <body>      <paper-button onclick="goBack()" id="backButton">Back</paper-button>
@@ -60,11 +76,11 @@ function goBack() {
 </script>
   <post-card>
     <h1>Pick Your Picture!</h1>
-    <p>Select a picture to use. Use a good picture. One where you are looking straight ahead. This does not work on dogs.</p><br><br><br>
-<form method="post" action="file-upload-1.htm" name="submit" enctype="multipart/form-data" >
+    <p>Upload a picture of yourself to find your celebrity doppelganger.  </p><br><p><br>Facial portraits tend to return the most accurate results. Please avoid wearing hats, glasses, or anything else that may interfere with our algorithms.</p><br>
+<form method="post" action="file-upload-1.htm" name="submit" enctype="multipart/form-data" id="chooser">
   <input type="file" name="fileField" ><br /><br />
-  <input type="submit" name="submit" value="Submit">
-</form><br><br>
+  <input type="submit" name="submit" value="Submit" id="submit">
+</form><br><br><br>
 </post-card>
   </div>
   </body>
