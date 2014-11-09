@@ -129,7 +129,15 @@ video {
     width: 40%;
     margin: auto 30%;
     }
-
+iframe {
+  position: absolute;
+  top: -10%;
+ right: 0;
+  overflow: auto;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+}
 
 #capture {
   font-weight: 300;
@@ -242,15 +250,19 @@ paper-dialog h1 {
 }
 
 /* states */
-.intro #videocontainer, .testing #videocontainer, .testing #canvas { display: none; }
+.intro #videocontainer, .testing #videocontainer, .testing #canvas, .intro #animation { display: none; }
 .playing #videocontainer { display: block; }
-.playing #canvas { display: none; } 
+.playing #canvas { display: none; }
+.playing #animation { display: none;}
 .reviewing #videocontainer { display: none; }
 .reviewing #canvas { display: block; }
 .reviewing #controls { top: 7%; }
 .reviewing #header { display: none;}
 .reviewing #backButton {display:none;}
+.reviewing #animation { display: none;}
 .uploaded #uploaded { top: 15%; }
 .uploading #header { display: none;}
 .uploading #canvas {display: none;}
 .uploading #videocontainer {display: none;}
+.uploading #animation { display: block;}
+
