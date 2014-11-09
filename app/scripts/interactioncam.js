@@ -153,8 +153,6 @@
     }
   }, false);
 
-
-
   video.addEventListener('click', function(ev){
     setstate('reviewing');
     takepicture();
