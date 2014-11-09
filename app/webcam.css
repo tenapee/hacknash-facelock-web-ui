@@ -155,13 +155,10 @@ video {
   background: #999;
   margin-bottom: 10px;
 }
-#uploading, #uploaded {
+#uploaded {
   text-align:center;
   width: auto;
   min-height: auto;
-}
-#uploading {
-  background: #999;
 }
 #controls #resetbutton {
   background: #999;
@@ -237,7 +234,6 @@ video {
 .reviewing #controls { top: 7%; }
 .reviewing #header { display: none;}
 .uploaded #uploaded { top: 15%; }
-.uploading #uploading { top: 10%; }
 .uploading #header { display: none;}
 .uploading #canvas {display: none;}
 .uploading #videocontainer {display: none;}

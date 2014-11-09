@@ -116,7 +116,24 @@
         var url = matches["images"][0];
         var image = document.createElement("IMG");
         image.src = url;
+        image.style.maxWidth = 200;
+        image.style.maxHeight = 200;
+
+        //var blah = document.createElement("IMG");
+        //blah.src = url;
+        //blah.style.maxWidth = 200;
+        //blah.style.maxHeight = 200;
+        //
+        //var blah1 = document.createElement("IMG");
+        //blah1.src = url;
+        //blah1.style.maxWidth = 200;
+        //blah1.style.maxHeight = 200;
+
+        //dialog.maxWidth = '80%';
+
         dialog.appendChild(image);
+        //dialog.appendChild(blah);
+        //dialog.appendChild(blah1);
 
         dialog.toggle();
 
@@ -178,12 +195,12 @@
     setstate('reviewing');
     takepicture();
   }, false);
-  
+
   capture.addEventListener('click', function(ev){
       setstate('playing');
       init();
   }, false);
-  
+
   snap.addEventListener('click', function(ev){
       setstate('reviewing');
       takepicture();
