@@ -5,6 +5,9 @@
   <title>CelebriME</title>
   <link rel="import" href="elements/elements.html">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="import" href="bower_components/paper-dialog/paper-dialog-transition.html">
+  <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <style>
     html, body {
       height: 100%;
@@ -15,16 +18,16 @@
       text-align: center;
 
     }
-    
-   .container {
-    max-width: 80%;
-    position: absolute;
-    top: 8%;
-    margin: 0 20%;
-    height: 60%;
 
-  }
-    
+    .container {
+      max-width: 80%;
+      position: absolute;
+      top: 8%;
+      margin: 0 20%;
+      height: 60%;
+
+    }
+
     h1 {
       color: #004C7C;
       width: 70%;
@@ -33,7 +36,7 @@
       font-size: 2.5em;
       padding: 10px;
     }
-    
+
     p {
       width: 80%;
       margin: auto 10%;
@@ -41,47 +44,110 @@
       font-weight: 400;
       line-height: 30px;
     }
-    
+
     #chooser {
       float: left;
     }
-    #submit {
-      float: left;
-    }
-    #backButton {
-  position: absolute;
-  left: 20px;
-  top: 10px;
-  color: #004C7C;
-  background: white;
-  height: 25px;
-  width: 50px;
-  border-radius: 3px;
-  border: none;
-  padding-top: 5px;
-}
-    
 
+    #backButton {
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      color: #004C7C;
+      background: white;
+      height: 25px;
+      width: 50px;
+      border-radius: 3px;
+      border: none;
+      padding-top: 5px;
+    }
+
+    paper-dialog {
+      font-family: "Open Sans", helvetica, sans-serif;
+      border-radius: 10px;
+      color: #004C7C;
+      text-align: center;
+      font-size: 1.3em;
+    }
+
+    paper-dialog h1 {
+      padding: 10px;
+    }
+
+    #resultlist {
+      display:inline;
+      
+    }
   </style>
 </head>
-<body>      <paper-button onclick="goBack()" id="backButton">Back</paper-button>
-  <div horizontal vertical center layout>
+<body>
+<paper-button onclick="goBack()" id="backButton">Back</paper-button>
+<div horizontal vertical center layout>
   <div class="container" layout horizontal center>
 
+    <script>
+      function goBack() {
+        window.history.back()
+      }
+    </script>
+    <post-card>
+      <h1>Pick Your Picture!</h1>
 
-<script>
-function goBack() {
-    window.history.back()
-}
-</script>
-  <post-card>
-    <h1>Pick Your Picture!</h1>
-    <p>Upload a picture of yourself to find your celebrity doppelganger.  </p><br><p><br>Facial portraits tend to return the most accurate results. Please avoid wearing hats or glasses, including multiple people, or anything else that may interfere with our algorithms.</p><br>
-<form method="post" action="file-upload-1.htm" name="submit" enctype="multipart/form-data" id="chooser">
-  <input type="file" name="fileField" ><br /><br />
-  <input type="submit" name="submit" value="Submit" id="submit">
-</form><br><br><br>
-</post-card>
-  </div>
-  </body>
+      <p>Upload a picture of yourself to find your celebrity doppelganger. </p><br>
+
+      <p><br>Facial portraits tend to return the most accurate results. Please avoid wearing hats, glasses, or anything
+        else that may interfere with our algorithms.</p><br>
+
+      <form method="post" action="file-upload-1.htm" name="submit" enctype="multipart/form-data" id="chooser">
+        <input type="file" name="fileField" onchange="previewFile()">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+          function previewFile(){
+            var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+            var reader  = new FileReader();
+            var resultlist       = document.querySelector('#resultlist');
+
+            reader.onloadend = function () {
+              var thisImage = reader.result;
+
+              $.ajax('http://localhost:5000/api/similarity', {
+                type: 'POST',
+                data: thisImage.replace(/^data:image\/(png|jpeg);base64,/, ""),
+                headers: {'Content-Type' : 'application/octet-stream'},
+                success: function (matches)
+                {
+//                  alert(matches['results'][0]['image'])
+
+                  for(var i = 0; i < 5; i++){
+                    var url = matches['results'][i]['image'];
+                    var image = document.createElement("IMG");
+                    image.src = url;
+                    image.style.maxWidth = 200;
+                    image.style.maxHeight = 200;
+                    resultlist.appendChild(image);
+                  }
+
+                  dialog.toggle();
+
+                  //window.open(url);
+                }
+              });
+            }
+
+            if (file) {
+              reader.readAsDataURL(file); //reads the data as a URL
+            }
+          }
+
+          previewFile();  //calls the function named previewFile()
+        </script>
+      </form>
+      <br><br><br>
+    </post-card>
+
+  <paper-dialog heading="Results" transition="paper-dialog-transition-center" id="dialog">
+    <li id="resultlist"></li>
+  </paper-dialog>
+</div>
+</body>
 </html>
