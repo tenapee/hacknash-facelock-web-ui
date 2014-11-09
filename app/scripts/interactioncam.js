@@ -101,7 +101,7 @@
 
     setstate('uploading');
 
-    $.ajax('http://localhost:5000/api/similarity', {
+    $.ajax('http://localhost:5000/api/similarity?algorithm=eigen', {
       type: 'POST',
       data: canvas.toDataURL('image/jpeg', 0.9).replace(/^data:image\/(png|jpeg);base64,/, ""),
       headers: {'Content-Type' : 'application/octet-stream'},
@@ -109,12 +109,18 @@
       {
         //alert(matches['results'][0]['image'])
 
+        while(dialog.firstChild){
+          dialog.removeChild(dialog.firstChild);
+        }
+
         for(var i = 0; i < 5; i++){
           var url = matches['results'][i]['image'];
           var image = document.createElement("IMG");
+
           image.src = url;
           image.style.maxWidth = 200;
           image.style.maxHeight = 200;
+
           dialog.appendChild(image);
         }
 

@@ -160,11 +160,15 @@ iframe {
 }
 
 paper-dialog {
+  position:absolute;
   font-family: "Open Sans", helvetica, sans-serif;
   border-radius: 10px;
+  margin:auto 10%;
+  margin-top:80px;
   color: #004C7C;
   text-align: center;
   font-size: 1.3em;
+  width:80%;
 }
 
 paper-dialog h1 {
@@ -265,4 +269,7 @@ paper-dialog h1 {
 .uploading #canvas {display: none;}
 .uploading #videocontainer {display: none;}
 .uploading #animation { display: block;}
+.finished #animation {display: none;}
+.finished #videocontainer {display:none;}
+
 
