@@ -120,11 +120,19 @@
 
         dialog.toggle();
 
+        setstate('finished');
+
         //window.open(url);
       }
     });
 
   }
+
+  dialog.addEventListener('core-overlay-open', function(ev){
+    if(!dialog.opened){
+      setstate('playing');
+    }
+  }, false);
 
  function setstate(newstate) {
     state = newstate;
