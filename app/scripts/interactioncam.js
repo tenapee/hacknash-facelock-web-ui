@@ -13,7 +13,7 @@
       urlfield     = document.querySelector('#uploaded input'),
       urllink      = document.querySelector('#uploaded a'),
       snap         = document.querySelector('#snap'),
-      capture      = document.querySelector('#capture');
+      capture      = document.querySelector('#capture'),
       dialog       = document.querySelector('#dialog');
 
  var ctx    = canvas.getContext('2d'),
