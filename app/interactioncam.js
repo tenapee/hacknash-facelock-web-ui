@@ -79,9 +79,6 @@
   }
 
   function reshoot() {
-    if (state === 'reviewing') {
-      sounds.rip.play();
-    }
     if (state === 'reviewing' || state === 'uploaded') {
       canvas.width = width;
       canvas.height = finalheight;

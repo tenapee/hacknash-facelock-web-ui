@@ -1,17 +1,15 @@
 html, body {
   background: linear-gradient(to bottom, #00BCD0 0%, #00BCD0 35%, #00BCD0 35%, #ECECEC 35%, #ECECEC 100%);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", helvetica, sans-serif;
   color: #333;
 }
 
 .hero-unit{
   margin: 50px auto 0 auto;
   width: 300px;
-  font-size: 18px;
+  font-size: 1.3em;
   font-family: "Open Sans", helvetica, sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 30px;
   background-color: #eee;
   border-radius: 6px;

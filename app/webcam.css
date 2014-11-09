@@ -7,8 +7,6 @@
 html, body {
   background: linear-gradient(to bottom, #00BCD0 0%, #00BCD0 35%, #00BCD0 35%, #ECECEC 35%, #ECECEC 100%);
   background-size: 100% 100%;
-  background-repeat: no-repeat;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   height: 100%;
   width: 100%;
@@ -17,31 +15,53 @@ html, body {
   font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+  font-family: "Open Sans", helvetica, sans-serif;
 }
 
-#whole {
-    height: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+#backButton {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  color: #004C7C;
+  background: white;
+  height: 25px;
+  width: 50px;
+  border-radius: 3px;
+  border: none;
+  padding-top: 5px;
 }
-
 header {
-  position: relative;
-  max-width: 50%;
-  margin: 50px 20%;
+  position: absolute;
+  top: -700px;
+  z-index: 2;
+  max-width: 100%;
+  margin: 0 17%;
+  margin-top: -10%;
   background: #fff;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border-radius: 10px;
   color: black;
-  font-size: 18px;
-  font-family: "Open Sans", helvetica, sans-serif;
-  font-weight: 200;
+  font-size: 1.3em;
+  font-weight: 400;
   line-height: 30px;
+  height: 60%;
+  overflow-y: auto;
+
     -webkit-transition: 1s 0.5s;
      -moz-transition: 1s 0.5s;
       -ms-transition: 1s 0.5s;
        -o-transition: 1s 0.5s;
           transition: 1s 0.5s;
+}
+
+h1 {
+  color: #004C7C;
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }
 
 .intro header {
@@ -105,7 +125,7 @@ video {
   font-size: 18px;
   color: #fff;
   width: 48%;
-  background: #00BCD0;
+  background: #999;
   border-radius: 10px;
   padding: 10px 20px;
 }
@@ -126,7 +146,7 @@ video {
   background: #999;
 }
 #controls #resetbutton {
-  background: #c00;
+  background: #999;
   border: none;
   font-size: 18px;
   color: #fff;
@@ -193,9 +213,13 @@ video {
 /* states */
 .intro #videocontainer, .testing #videocontainer, .testing #canvas { display: none; }
 .playing #videocontainer { display: block; }
-.playing #canvas { display: block; }
+.playing #canvas { display: none; }
 .reviewing #videocontainer { display: none; }
 .reviewing #canvas { display: block; }
-.reviewing #controls { top: 10%; }
+.reviewing #controls { top: 7%; }
+.reviewing #header { display: none;}
 .uploaded #uploaded { top: 15%; }
 .uploading #uploading { top: 10%; }
+.uploading #header { display: none;}
+.uploading #canvas {display: none;}
+.uploading #videocontainer {display: none;}
