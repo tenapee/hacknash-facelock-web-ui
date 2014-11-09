@@ -14,6 +14,7 @@
       urllink      = document.querySelector('#uploaded a'),
       snap         = document.querySelector('#snap'),
       capture      = document.querySelector('#capture');
+      dialog       = document.querySelector('#dialog');
 
  var ctx    = canvas.getContext('2d'),
      streaming    = false,
@@ -110,17 +111,16 @@
       headers: {'Content-Type' : 'application/octet-stream'},
       success: function (matches)
       {
-        // alert(matches["images"][0])
-        var image = document.createElement("img");
-        image.src = matches["images"][0];
+        //alert(matches["images"][0])
 
-        ctx.drawImage(image, 590 - imgwidth, 440 - imgheight, imgwidth, imgheight);
+        var url = matches["images"][0];
+        var image = document.createElement("IMG");
+        image.src = url;
+        dialog.appendChild(image);
 
-        canvas.style.display='none';
-        vidcontainer.style.display='none'
+        dialog.toggle();
 
-        var src = document.getElementById("header");
-        src.appendChild(image);
+        //window.open(url);
       }
     });
 
