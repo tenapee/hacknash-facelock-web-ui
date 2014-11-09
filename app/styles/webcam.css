@@ -120,7 +120,7 @@ video {
   #controls {
     z-index: 20;
   }
-  .button {
+  .button{
     background: #00BCD0;
     color: #FFF;
     text-align: center;
@@ -129,6 +129,8 @@ video {
     width: 40%;
     margin: auto 30%;
     }
+
+
 #capture {
   font-weight: 300;
   padding: 10px;
@@ -141,16 +143,18 @@ video {
 #controls button, #uploaded form, #uploaded button, #uploading  {
   border: none;
   font-size: 18px;
-  color: #fff;
+  color: #004C7C;
   width: 48%;
-  background: #999;
+  background: #FFF;
   border-radius: 10px;
   padding: 10px 20px;
+  margin: auto 2px;
 }
 
 #uploaded form, #uploaded button {
   width: auto;
 }
+
 #uploaded form {
   background: #999;
   margin-bottom: 10px;
@@ -161,10 +165,10 @@ video {
   min-height: auto;
 }
 #controls #resetbutton {
-  background: #999;
+  background: #FFF;
   border: none;
   font-size: 18px;
-  color: #fff;
+  color: #004C7C;
   width: 48%;
   border-radius: 10px;
   padding: 10px 20px;
@@ -233,6 +237,7 @@ video {
 .reviewing #canvas { display: block; }
 .reviewing #controls { top: 7%; }
 .reviewing #header { display: none;}
+.reviewing #backButton {display:none;}
 .uploaded #uploaded { top: 15%; }
 .uploading #header { display: none;}
 .uploading #canvas {display: none;}
