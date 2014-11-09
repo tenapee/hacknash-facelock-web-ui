@@ -98,10 +98,6 @@
   }
 
   function upload() {
-    var head = /^data:image\/(png|jpeg);base64,/,
-        data = '',
-        fd = new FormData(),
-        xhr = new XMLHttpRequest();
 
     setstate('uploading');
 
