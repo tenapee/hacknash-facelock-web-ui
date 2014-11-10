@@ -1,4 +1,3 @@
-CelebriME 
 Tied for 2nd Place at Hack Nashville
 ========================
 Front end node project for CelebriME project at HackNash6
